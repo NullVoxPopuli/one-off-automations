@@ -1,0 +1,6 @@
+{
+  "type": "module",
+	"dependencies": {
+		"ember-apply": "^2.10.1"
+	}
+}
