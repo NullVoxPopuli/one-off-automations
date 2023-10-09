@@ -1,6 +1,13 @@
 {
-  "type": "module",
+	"type": "module",
 	"dependencies": {
-		"ember-apply": "^2.10.1"
+		"ember-apply": "^2.10.1",
+		"latest-version": "^7.0.0"
+	},
+	"devDependencies": {
+		"@tsconfig/esm": "^1.0.5",
+		"@tsconfig/node18": "^18.2.2",
+		"@tsconfig/strictest": "^2.0.2",
+		"typescript": "^5.2.2"
 	}
 }
