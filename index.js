@@ -3,10 +3,14 @@ import latestVersion from 'latest-version';
 
 let psdmi = await latestVersion('pnpm-sync-dependencies-meta-injected');
 
-console.log(psdmi);
-
 for (let workspace of await project.getWorkspaces()) {
   let manifest = await packageJson.read(workspace);
+
+  if (manifest.scripts?.prepare && manifest.scripts?.build) {
+    await packageJson.modify(json => {
+      delete json.scripts.prepare;
+    }, workspace);
+  }
 
   if (manifest.dependenciesMeta) {
     await packageJson.modify(json => {
